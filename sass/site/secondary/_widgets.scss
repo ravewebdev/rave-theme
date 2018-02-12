@@ -1,0 +1,19 @@
+.widget {
+	margin: $margin_basic;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+
+	ul {
+		margin: 0;
+		@include trailer;
+	}
+}
+
+#secondary {
+	@media screen and (max-width: $screen-sm-min) {
+		padding-left: 6%;
+	}
+}

@@ -1,0 +1,50 @@
+/*
+ * Slick slider styles
+ */
+ .slick-slider {
+
+ 	.carousel-control {
+ 		opacity: 0.25;
+ 		max-width: 150px;
+ 		min-width: 50px;
+ 		z-index: 999;
+ 		@include single-transition(opacity, 0.5s);
+
+ 		&:hover,
+ 		&:focus {
+ 			opacity: 0.9;
+ 		}
+
+ 		i {
+ 			position: absolute;
+ 			top: 50%;
+ 			font-size: $base-font-size * 4;
+ 			margin-top: -($base-font-size * 2);
+ 		}
+ 	}
+
+ 	/*.slick-prev,
+ 	.slick-next {
+ 		z-index: 999;
+ 		width: 50px;
+ 		height: 50px;
+ 		@include border-radius(0);
+ 		@include box-shadow(none);
+ 		border: none;
+ 		color: #fff;
+ 		
+
+
+
+ 		&:before {
+ 			content: '';
+ 		}
+ 	}
+
+	.slick-prev {
+		left: 25px;
+	}
+	.slick-next {
+		right: 25px;
+	}*/
+}

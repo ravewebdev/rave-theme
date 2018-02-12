@@ -1,0 +1,61 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: $margin_basic;
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: $margin_basic;
+}
+
+.entry-header {
+	&:after{
+		@include clearfix;
+		@include clearfix-after;
+	}
+
+	.banner-wrap{
+		max-height: 75vh;
+		overflow: hidden;
+		img {
+			max-height:100%;
+		}
+	}
+
+	.entry-meta {
+		margin-top: 1.5em;
+	}
+}
+
+.container.content {
+	padding-top: 2em;
+	padding-bottom: 2em;
+
+	&.site-info {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+}
+
+.site-content {
+	padding-top: 10%;
+}

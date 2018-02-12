@@ -1,0 +1,143 @@
+.superheader {
+	.header-info {
+		margin: 0.5em 0;
+		text-align: center;
+
+		.widget {
+			margin: 0;
+		}
+
+		@media screen and (min-width: $screen-sm-min),
+		screen and (min-width: 700px) and (orientation: landscape) {
+			float: right;
+			text-align: right;
+		}
+	}
+
+	a {
+		@include link-colors( #fff, $color__link-hover, $color__link-hover, #fff , $color__link-hover );
+	}
+}
+
+.logo-svg {
+
+	svg {
+		width: 50%;
+    	height: auto;
+	}
+
+	#logo {
+		display: block;
+		opacity: 1;
+
+		&_inverse {
+			display: none;
+			opacity: 0;
+		}
+
+		.home & {
+			display: none;
+			opacity: 0;
+
+			&_inverse {
+				display: block;
+				opacity: 1;
+			}
+		}
+	}
+
+	@media screen and (min-width: $screen-sm-min),
+	screen and (min-width: 700px) and (orientation: landscape) {
+		position: absolute;
+		left: 0;
+		right: 0;
+
+		@keyframes offset {
+			100% {
+				stroke-dashoffset: 0;
+			}
+		}
+		@keyframes fill-in {
+			100% {
+				fill: #000;
+			}
+		}
+		@keyframes fill-in-inverse {
+			100% {
+				fill: #fff;
+			}
+		}
+		@keyframes show-highlights {
+			100% {
+				opacity: 1;
+			}
+		}
+
+		.logo {
+			stroke: $color__link-hover;
+			stroke-width: 2;
+			stroke-dasharray: 593.3150634765625;
+			stroke-dashoffset: 593.3150634765625;
+
+			fill: transparent;
+
+			animation: offset 3s linear forwards,
+				fill-in 1s ease-in-out 3s forwards;
+
+			.home & {
+				//stroke: #fff;
+				animation: offset 3s linear forwards,
+					fill-in-inverse 1s ease-in-out 3s forwards;
+			}
+		}
+		.highlight {
+			opacity: 0;
+
+			animation: show-highlights 0.5s ease-in-out 4s forwards;
+		}
+
+		svg {
+			@include single-transition(transform, 0.5s, ease-in-out);
+			width: 75%;
+		}
+
+		a:hover,
+		a:active,
+		a:focus{
+			& svg {
+				@include transform(scale(1.1));
+			}
+		}
+	}
+}
+
+.site-branding {
+	width: 30%;
+	margin: 0 auto;
+
+	a {
+		text-decoration: none;
+	}
+
+	@media screen and (min-width: $screen-sm-min),
+	screen and (min-width: 700px) and (orientation: landscape) {
+		position: relative;
+		width: 15%;
+	}
+}
+
+.site-title {
+	color: $brand-primary;
+	@include headings(1.125);
+	@include single-transition(opacity, 0.5s);
+
+	.home & {
+		color: #fff;
+	}
+
+	a:hover &,
+	a:active &,
+	a:focus & {
+		opacity: 0.8;
+	}
+}

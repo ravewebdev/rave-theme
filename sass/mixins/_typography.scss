@@ -1,0 +1,15 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * $base-font-size);
+	//font-size: $sizeValue * 1.4rem;
+}
+
+// Set heading font-size, bottom margin
+@mixin headings($font-size-mult) {
+	$font-size: $base-font-size * $font-size-mult; // Calculate heading font-size
+	@include adjust-font-size-to($font-size);
+	line-height: 1;
+	//@include font-size($font-size-mult);
+	
+	margin-bottom: rhythm(1, $font-size);
+}

@@ -1,0 +1,200 @@
+#navbar {
+
+	&.navbar-collapse {
+		padding: 0;
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			@media screen and (min-width: $screen-sm-min),
+			screen and (min-width: 700px) and (orientation: landscape) {
+				@include box-shadow(rgba(0, 0, 0, 0.2) 0 3px 3px);
+				float: left;
+				position: absolute;
+				//top: 1.5em;
+				left: -999em;
+				z-index: 99999;
+				text-align: left;
+
+				.navbar-inverse & {
+					background-color: $navbar-inverse-bg;
+				}
+
+				ul {
+					left: -999em;
+					top: 0;
+				}
+
+				a {
+					width: 200px;
+				}
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					//left: 100%;
+				}
+			}
+
+			a {
+				padding-left: $nav-link-padding-h * 2;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		@media screen and (min-width: $screen-sm-min),
+		screen and (min-width: 700px) and (orientation: landscape) {
+			li:hover > ul,
+			li.focus > ul {
+				left: auto;
+				//right: 0;
+			}
+		}
+	}
+
+	li {
+		/*/float: left;*/
+		position: relative;
+		//display: block;
+
+		&:hover > a,
+		&.focus > a {
+			color: $navbar-default-link-hover-color;
+			.navbar-inverse & {
+				color: $navbar-inverse-link-hover-color;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		padding: $nav-link-padding;
+		background-color: $nav-link-hover-bg;
+		color: $navbar-default-link-color;
+		font-family: $font__heading;
+		font-size: $base-font-size * 1.125;
+
+		.navbar-inverse & {
+			background-color: transparent;
+			color: $navbar-inverse-link-color;
+
+			&:hover {
+				color: $navbar-default-link-hover-color !important;
+			}
+		}
+
+		@media screen and (min-width: 700px) and (orientation: landscape) and (max-width: $screen-md-min) {
+			font-size: inherit;
+			padding: 10px;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		@media screen and (min-width: $screen-sm-min),
+		screen and (min-width: 700px) and (orientation: landscape) {
+			color: $component-active-color;
+			background-color: $component-active-bg;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a {
+		color: $component-active-color;
+		background-color: $component-active-bg;
+	}
+}
+
+@media screen and (min-width: $screen-sm-min),
+screen and (min-width: 700px) and (orientation: landscape) {
+	.navbar-nav {
+		float: none;
+		text-align: center;
+
+		> li {
+			float: none;
+			display: inline-block;
+		}
+	}
+	#primary-menu {
+		text-align: right;
+		width: 45%;
+		float: left;
+
+		&-right {
+			text-align: left;
+			width: 45%;
+			float: right;
+		}
+	}
+}
+
+.navbar-toggle {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (min-width: 700px) and (orientation: landscape) and (max-width: $screen-sm-min) {
+		display: none;
+	}
+}
+
+.navbar-collapse.collapse {
+	@media screen and (min-width: 700px) and (orientation: landscape) and (max-width: $screen-sm-min) {
+		display: block !important;
+		height: auto !important;
+		padding-bottom: 0;
+		overflow: visible !important;
+	}
+}
+
+/* Small menu. *
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}*/
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: $margin_basic;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

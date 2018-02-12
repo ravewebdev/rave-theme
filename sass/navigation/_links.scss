@@ -1,0 +1,63 @@
+a {
+	@include link-colors( $color__link, $color__link-hover, $color__link-hover, $color__link-visited , $color__link-hover );
+	text-decoration: underline;
+	@include single-transition(color, 0.5s);
+
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+
+	.home #primary & {
+		@include link-colors( $color__link-hover, $color__link, $color__link, $color__link-hover , $color__link );
+	}
+
+	.superheader & {
+		@include link-colors( #fff, $gray-lighter, $gray-lighter, #fff , $gray-lighter );
+	}
+}
+
+.social-links {
+	text-align: center;
+	margin: 0.5em 0;
+
+	a {
+		margin: 0 0.5em;
+		font-size: $base-font-size * 1.5;
+	}
+
+	@media screen and (min-width: $screen-sm-min),
+	screen and (min-width: 700px) and (orientation: landscape) {
+		float: left;
+		text-align: left;
+
+		a {
+			font-size: $base-font-size;
+		}
+	}
+}
+
+.scriptlesssocialsharing-buttons {
+	text-align: center;
+	margin-bottom: 1.5em;
+
+	.button {
+		margin: 10px;
+
+		&:before {
+			font-size: $base-font-size * 1.5;
+
+			@media screen and (min-width: $screen-sm-min),
+			screen and (min-width: 700px) and (orientation: landscape) {
+				//font-size: $base-font-size;
+			}
+	}
+	}
+
+	.sss-name {
+		@extend .sr-only;
+	}
+}

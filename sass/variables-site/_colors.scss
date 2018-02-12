@@ -1,0 +1,29 @@
+$color__background-body: $body-bg; // #fff
+$color__background-screen: shade($body-bg, 5.3%); // #f1f1f1
+$color__background-hr: $gray-lighter; //#ccc
+$color__background-button: shade($body-bg, 10%); // #e6e6e6
+$color__background-pre: $gray-lightest; // #eee
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: $gray;
+$color__text-input-focus: $gray-darkest; // #111
+$color__link: $link-color; // $brand-primary // royalblue;
+$color__link-visited: $color__link;
+$color__link-hover: $link-hover-color; // midnightblue;
+$color__link-inverse: $brand-tertiary;
+$color__text-main: $text-color; // #404040;
+$color__text-inverse: $gray-lightest;
+
+$color_secondary-hover-desaturate: rgb(blue($color__link-hover), blue($color__link-hover), blue($color__link-hover));//adjust-color($color__link-hover, $green: -97, $blue: -141);
+$color_link-hover-desaturate: $color_secondary-hover-desaturate;
+$color-primary-desaturate: rgb(red($brand-primary), red($brand-primary), red($brand-primary));
+
+$color__border-button: $gray-lighter $gray-lighter $gray-light3; // #ccc #ccc #bbb;
+$color__border-button-hover: $gray-lighter $gray-light3 $gray-light2; // #ccc #bbb #aaa;
+$color__border-button-focus: $gray-light2 $gray-light3 $gray-light3; // #aaa #bbb #bbb;
+$color__border-input: $gray-lighter;
+$color__border-abbr: $gray; // #666;
+
+$color__footer-super-bg: $color_secondary-hover-desaturate;
+$color__footer-main-bg: $color-primary-desaturate;

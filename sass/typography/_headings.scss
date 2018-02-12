@@ -1,0 +1,23 @@
+#{headings(all)} {
+	clear: both;
+	margin: 0;
+	font-family: $font__heading;
+	text-transform: capitalize;
+	color: $brand-primary;
+
+	a {
+		//color: inherit;
+	}
+
+	.home #primary &,
+	.home #secondary & {
+		color: $color_link-hover-desaturate;
+	}
+}
+
+// Iterate through headings, print calculated heading styles
+@for $i from 1 through length($h-font-size-mult) {
+	h#{$i} {
+		@include headings(nth($h-font-size-mult, $i));
+	}
+}

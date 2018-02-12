@@ -1,0 +1,52 @@
+//@include sticky-footer(150px, '#page', '#page-footer', '#footer');
+#superfooter {
+	background: $color__footer-super-bg;
+
+	.widget-title {
+		text-align: center;
+	}
+
+	.widget {
+		@media screen and (min-width: $screen-sm-min) {
+			margin-bottom: 0;
+		}
+
+		div {
+			@include adjust-font-size-to($base-font-size * 0.875, 0.875);
+		}
+
+		:last-child {
+			margin-bottom: 0;
+		}
+
+		ul {
+			list-style-type: none;
+
+			li {
+				line-height: $base-line-height * 1.25;
+			}
+
+			a:before {
+				content: "\f0da";
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+#footer {
+	background: $color__footer-main-bg;
+	color: #fff;
+	font-family: $font__heading;
+
+	.site-info {
+		p {
+			margin-bottom: 0;
+		}
+	}
+}

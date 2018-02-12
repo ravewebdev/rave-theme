@@ -1,0 +1,31 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	@include border-radius($border-radius-small);
+	background: $color__background-button;
+	@include box-shadow(rgba(255, 255, 255, 0.5) 0 1px 0 inset,
+		rgba(255, 255, 255, 0.5) 0 15px 17px inset,
+		rgba(0, 0, 0, 0.05) 0 -5px 12px inset);
+	color: rgba(0, 0, 0, .8);
+	@include font-size(0.75);
+	line-height: 1;
+	padding: .6em 1em .4em;
+	//@include text-shadow(rgba(255, 255, 255, 0.8) 0 1px 0);
+
+	&:hover {
+		border-color: $color__border-button-hover;
+		@include box-shadow(rgba(255, 255, 255, 0.8) 0 1px 0 inset,
+			rgba(255, 255, 255, 0.8) 0 15px 17px inset,
+			rgba(0, 0, 0, 0.02) 0 -5px 12px inset);
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+		@include box-shadow(rgba(255, 255, 255, 0.5) 0 -1px 0 inset,
+			rgba(0, 0, 0, 0.15) 0 2px 5px inset);
+	}
+}
